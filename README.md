@@ -1,7 +1,7 @@
 # Data Structures & Algorithms Visualiser
 
 A web-based visualiser for learning and understanding data structures and algorithms.  
-Built using **HTML**, **CSS**, and **JavaScript** — no frameworks!
+Built using **HTML**, **CSS**, and **JavaScript** - no frameworks!
 
 ---
 
