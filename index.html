@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Data Structures & Algorithms Visualizer</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="controls-panel">
+                <div class="data-structure-selector">
+                    <h2>Data Structures</h2>
+                    <div class="btn-group">
+                        <button class="ds-btn active" data-structure="array">Array</button>
+                        <button class="ds-btn" data-structure="linked-list">Linked List</button>
+                        <button class="ds-btn" data-structure="stack">Stack</button>
+                        <button class="ds-btn" data-structure="queue">Queue</button>
+                        <button class="ds-btn" data-structure="tree">Binary Tree</button>
+                        <button class="ds-btn" data-structure="graph">Graph</button>
+                    </div>
+                </div>
+                
+                <div class="algorithm-selector">
+                    <h2>Algorithms</h2>
+                    <div class="btn-group">
+                        <button class="algo-btn" data-algorithm="linear-search">Linear Search</button>
+                        <button class="algo-btn" data-algorithm="binary-search">Binary Search</button>
+                        <button class="algo-btn" data-algorithm="bubble-sort">Bubble Sort</button>
+                        <button class="algo-btn" data-algorithm="selection-sort">Selection Sort</button>
+                        <button class="algo-btn" data-algorithm="insertion-sort">Insertion Sort</button>
+                        <button class="algo-btn" data-algorithm="dfs">DFS</button>
+                        <button class="algo-btn" data-algorithm="bfs">BFS</button>
+                    </div>
+                </div>
+                
+                <div class="operation-controls">
+                    <h2>Operations</h2>
+                    <div class="input-group">
+                        <input type="number" id="value-input" placeholder="Enter value">
+                        <button id="insert-btn">Insert</button>
+                        <button id="delete-btn">Delete</button>
+                        <button id="search-btn">Search</button>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="generate-random">Generate Random</button>
+                        <button id="clear-all">Clear All</button>
+                        <button id="start-algo">Start Algorithm</button>
+                    </div>
+                </div>
+                
+                <div class="speed-control">
+                    <label for="speed-slider">Animation Speed:</label>
+                    <input type="range" id="speed-slider" min="1" max="10" value="5">
+                </div>
+            </div>
+            
+            <div class="visualization-area">
+                <div id="visualization-container"></div>
+                <div class="code-preview">
+                    <h3>Algorithm Code</h3>
+                    <pre id="code-display">Select an algorithm to view its implementation</pre>
+                </div>
+                <div class="explanation">
+                    <h3>Explanation</h3>
+                    <div id="explanation-text">Select a data structure or algorithm to see an explanation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

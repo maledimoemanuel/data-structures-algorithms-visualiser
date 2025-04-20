@@ -1,0 +1,334 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.app-header h1 {
+    font-size: 2rem;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    padding: 1.5rem;
+    gap: 1.5rem;
+}
+
+.controls-panel {
+    width: 300px;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.visualization-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#visualization-container {
+    flex: 1;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.code-preview, .explanation {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.code-preview h3, .explanation h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+#code-display {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    flex: 1 0 auto;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.ds-btn.active, .algo-btn.active {
+    background-color: var(--secondary-color);
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#generate-random {
+    background-color: #f39c12;
+}
+
+#clear-all {
+    background-color: var(--accent-color);
+}
+
+#start-algo {
+    background-color: var(--secondary-color);
+}
+
+.speed-control {
+    margin-top: auto;
+}
+
+.speed-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.speed-control input {
+    width: 100%;
+}
+
+/* Visualization elements */
+.array-element {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.array-element.highlight {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.array-element.comparing {
+    background-color: #f39c12;
+}
+
+.array-element.sorted {
+    background-color: var(--secondary-color);
+}
+
+.array-element.pivot {
+    background-color: var(--accent-color);
+}
+
+.linked-list-node {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.node {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+    transition: var(--transition);
+}
+
+.node.highlight {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.arrow {
+    width: 30px;
+    height: 2px;
+    background-color: var(--dark-color);
+    position: relative;
+    margin: 0 5px;
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--dark-color);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.tree-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree-value {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.tree-value.highlight {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.tree-children {
+    display: flex;
+    gap: 40px;
+}
+
+.tree-connector {
+    width: 2px;
+    height: 20px;
+    background-color: var(--dark-color);
+    margin: 0 auto;
+}
+
+.graph-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.graph-node {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+    transition: var(--transition);
+}
+
+.graph-node.highlight {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.graph-edge {
+    position: absolute;
+    height: 2px;
+    background-color: var(--dark-color);
+    transform-origin: 0 0;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .controls-panel {
+        width: 100%;
+    }
+}
